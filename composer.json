@@ -1,0 +1,16 @@
+{
+    "name": "crazycat/module-developer",
+    "description": "CrazyCat Developer module",
+    "type": "crazycat-module",
+    "license": [
+        "proprietary"
+    ],
+    "require": {
+        "crazycat/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "CrazyCat\\Developer\\": "code/"
+        }
+    }
+}
