@@ -20,19 +20,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Module extends \CrazyCat\Framework\App\Module\Controller\Cli\AbstractAction {
 
     /**
-     * @var \CrazyCat\Framework\App\Module\Manager
-     */
-    private $moduleManager;
-
-    public function __construct( ModuleManager $moduleManager )
-    {
-        $this->moduleManager = $moduleManager;
-    }
-
-    /**
      * @param \Symfony\Component\Console\Command\Command $command
      */
-    public function configure( $command )
+    protected function configure( $command )
     {
         $command->setDescription( 'Show module structure.' );
     }
@@ -41,11 +31,11 @@ class Module extends \CrazyCat\Framework\App\Module\Controller\Cli\AbstractActio
      * @param \Symfony\Component\Console\Input\InputInterface $input
      * @param \Symfony\Component\Console\Output\OutputInterface $output
      */
-    public function run( InputInterface $input, OutputInterface $output )
+    protected function run( InputInterface $input, OutputInterface $output )
     {
         $output->writeln( "Enabled modules:\n" );
 
-        foreach ( $this->moduleManager->getEnabledModules() as $module ) {
+        foreach ( $this->objectManager->get( ModuleManager::class )->getEnabledModules() as $module ) {
             $output->writeln( $module->getData( 'name' ) );
         }
     }
