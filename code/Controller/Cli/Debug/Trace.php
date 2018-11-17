@@ -8,6 +8,7 @@
 namespace CrazyCat\Developer\Controller\Cli\Debug;
 
 use CrazyCat\Framework\App\Module\Manager as ModuleManager;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -25,7 +26,7 @@ class Trace extends \CrazyCat\Framework\App\Module\Controller\Cli\AbstractAction
     /**
      * @param \Symfony\Component\Console\Command\Command $command
      */
-    protected function configure( $command )
+    protected function configure( Command $command )
     {
         $command->setDefinition( [
             new InputArgument( self::INPUT_KEY_TYPE, InputArgument::REQUIRED, 'Type of content to trace' )
