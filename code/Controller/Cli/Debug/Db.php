@@ -7,7 +7,7 @@
 
 namespace CrazyCat\Developer\Controller\Cli\Debug;
 
-use CrazyCat\Framework\App\Db\Manager;
+use CrazyCat\Framework\App\Db\Manager as DbManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -28,7 +28,7 @@ class Db extends \CrazyCat\Framework\App\Module\Controller\Cli\AbstractAction {
     protected function run( InputInterface $input, OutputInterface $output )
     {
         /* @var $conn \CrazyCat\Framework\App\Db\MySql */
-        $conn = $this->objectManager->get( Manager::class )->getConnection();
+        $conn = $this->objectManager->get( DbManager::class )->getConnection();
         $columns = [
                 [ 'name' => 'id', 'type' => 'int', 'unsign' => true, 'null' => false ],
                 [ 'name' => 'username', 'type' => 'varchar', 'length' => 32, 'null' => false ],

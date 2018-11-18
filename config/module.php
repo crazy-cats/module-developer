@@ -13,6 +13,7 @@
  */
 return [
     'namespace' => 'CrazyCat\Developer',
+    'version' => '1.0.0',
     'depends' => [],
     'routes' => [
         'cli' => 'dev'
