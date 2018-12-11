@@ -16,6 +16,7 @@ return [
     'version' => '1.0.0',
     'depends' => [],
     'routes' => [
+        'api' => 'dev',
         'cli' => 'dev'
     ]
 ];
