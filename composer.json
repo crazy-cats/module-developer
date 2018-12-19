@@ -1,6 +1,6 @@
 {
     "name": "crazycat/module-developer",
-    "description": "CrazyCat Developer module",
+    "description": "CrazyCat Module - Developer",
     "type": "crazycat-module",
     "license": [
         "proprietary"
