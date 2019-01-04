@@ -17,6 +17,7 @@ return [
     'depends' => [],
     'routes' => [
         'api' => 'dev',
-        'cli' => 'dev'
+        'cli' => 'dev',
+        'frontend' => 'dev'
     ]
 ];
